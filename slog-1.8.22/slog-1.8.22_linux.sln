@@ -5,7 +5,11 @@ VisualStudioVersion = 15.0.28307.2092
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0_thirdparty", "0_thirdparty", "{EBBBC5AB-E662-45E5-BA81-FB445F6B829F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libzlib", "thirdparty\slog-1.8.22\libslog_linux.vcxproj", "{791642ED-9E59-4F42-927B-3562F869D9C1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libslog", "thirdparty\slog-1.8.22\libslog_linux.vcxproj", "{791642ED-9E59-4F42-927B-3562F869D9C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_demo", "1_demo", "{9E1BF331-7F42-4199-A9DB-027EA0789D34}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example", "demo\example\example_linux.vcxproj", "{849211A0-8C01-4C2B-A528-79DDF1223E0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 		{791642ED-9E59-4F42-927B-3562F869D9C1}.Debug|x64.Build.0 = Debug|x64
 		{791642ED-9E59-4F42-927B-3562F869D9C1}.Release|x64.ActiveCfg = Release|x64
 		{791642ED-9E59-4F42-927B-3562F869D9C1}.Release|x64.Build.0 = Release|x64
+		{849211A0-8C01-4C2B-A528-79DDF1223E0A}.Debug|x64.ActiveCfg = Debug|x64
+		{849211A0-8C01-4C2B-A528-79DDF1223E0A}.Debug|x64.Build.0 = Debug|x64
+		{849211A0-8C01-4C2B-A528-79DDF1223E0A}.Release|x64.ActiveCfg = Release|x64
+		{849211A0-8C01-4C2B-A528-79DDF1223E0A}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{791642ED-9E59-4F42-927B-3562F869D9C1} = {EBBBC5AB-E662-45E5-BA81-FB445F6B829F}
+		{849211A0-8C01-4C2B-A528-79DDF1223E0A} = {9E1BF331-7F42-4199-A9DB-027EA0789D34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5806D430-DEB4-4E2B-8838-C80B410D7661}

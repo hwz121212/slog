@@ -11,30 +11,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="slog.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="slog.h" />
+    <ClCompile Include="example.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{791642ed-9e59-4f42-927b-3562f869d9c1}</ProjectGuid>
+    <ProjectGuid>{849211A0-8C01-4C2B-A528-79DDF1223E0A}</ProjectGuid>
     <Keyword>Linux</Keyword>
-    <RootNamespace>linux_test</RootNamespace>
+    <RootNamespace>zlib</RootNamespace>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <ApplicationType>Linux</ApplicationType>
     <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
     <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
     <LinuxProjectType>{2238F9CD-F817-4ECC-BD14-2524D2669B35}</LinuxProjectType>
-    <ProjectName>libslog</ProjectName>
+    <ProjectName>example</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
@@ -42,27 +39,38 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>/root/projects/libslog</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>
-      </PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\slog-1.8.22;/root/projects/libslog</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ZLIB_WINAPI;ASMV;ASMINF;_DEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <LibraryDependencies>
+      </LibraryDependencies>
+      <AdditionalDependencies>/root/lib/$(Configuration)/libslog.a;</AdditionalDependencies>
+      <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>/root/projects/libslog</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>ZLIB_WINAPI</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\slog-1.8.22;/root/projects/libslog</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ZLIB_WINAPI;ASMV;ASMINF;NDEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <LibraryDependencies>
+      </LibraryDependencies>
+      <AdditionalDependencies>/root/lib/$(Configuration)/libslog.a;</AdditionalDependencies>
+      <AdditionalOptions>-pthread %(AdditionalOptions)</AdditionalOptions>
+    </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
